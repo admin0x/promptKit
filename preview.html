@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <title>UI 预览 · 豆包指令库</title>
+        <style>
+            body {
+                margin: 0;
+                min-height: 100vh;
+                background: radial-gradient(1200px 600px at 20% -10%, #2a2a33, #0d0d11 60%);
+                color: #f5f5f7;
+                font: 14px/1.5 -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            }
+            .mock {
+                max-width: 720px;
+                margin: 60px auto;
+                padding: 40px 24px 140px;
+                text-align: center;
+            }
+            .mock h1 {
+                font-size: 20px;
+                margin: 0 0 6px;
+            }
+            .mock p {
+                color: rgba(235, 235, 245, 0.5);
+                font-size: 12px;
+                margin: 0 0 28px;
+            }
+            #fake-composer {
+                min-height: 96px;
+                padding: 16px 18px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 20px;
+                background: rgba(255, 255, 255, 0.05);
+                text-align: left;
+                outline: none;
+                color: #f5f5f7;
+            }
+            #fake-composer:empty::before {
+                content: '这里是模拟的豆包输入框，点面板上的「填入」试试';
+                color: rgba(235, 235, 245, 0.35);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="mock">
+            <h1>豆包指令库 · UI 预览</h1>
+            <p>此页仅用于本地预览面板效果，不含扩展逻辑（项目目录 PromptKit）</p>
+            <div id="fake-composer" contenteditable="true" role="textbox" data-placeholder="输入"></div>
+        </div>
+        <script>try { localStorage.removeItem('dbp.prompt.groups'); } catch (e) {}</script>
+        <script src="prompt-kit.js"></script>
+        <script>
+            document.getElementById('dbp-launcher-btn').click();
+        </script>
+    </body>
+</html>

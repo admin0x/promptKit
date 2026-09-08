@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "豆包指令库",
+  "short_name": "指令库",
+  "version": "0.1.0",
+  "author": "Li",
+  "homepage_url": "https://github.com/admin0x/doubao-prompt-kit",
+  "description": "豆包对话指令库：步骤提示词模板一键填入输入框，不自动发送，支持自定义增删改。By Li -https://github.com/admin0x/promptKit",
+  "minimum_chrome_version": "111",
+  "content_scripts": [
+    {
+      "matches": ["https://www.doubao.com/chat/*", "https://*.doubao.com/chat/*"],
+      "js": ["prompt-kit.js"],
+      "world": "MAIN",
+      "run_at": "document_idle"
+    }
+  ]
+}
